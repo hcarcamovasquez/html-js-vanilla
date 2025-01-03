@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuración en JavaScript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navegación -->
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white hover:text-gray-200 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Volver al Índice
+            </a>
+            <h1 class="text-xl font-bold">Destructuración en JavaScript</h1>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8">
+        <!-- Introducción -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Destructuración (Destructuring)</h2>
+            <p class="text-gray-700 mb-4">
+                La destructuración permite extraer valores de objetos o arrays y asignarlos a variables 
+                de una manera más concisa y legible.
+            </p>
+        </section>
+
+        <!-- Destructuración de Objetos -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Destructuración de Objetos</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> carro = {</div>
+                        <div class="pl-4">marca: <span class="text-green-400">'Toyota'</span>,</div>
+                        <div class="pl-4">modelo: <span class="text-green-400">'Corolla'</span>,</div>
+                        <div class="pl-4">año: <span class="text-orange-400">2023</span></div>
+                        <div>};</div>
+                        <br>
+                        <div><span class="text-gray-500">// Destructuración básica</span></div>
+                        <div><span class="text-pink-400">const</span> { marca, modelo } = carro;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Con alias</span></div>
+                        <div><span class="text-pink-400">const</span> { marca: fabricante, modelo: tipo } = carro;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Valores por defecto</span></div>
+                        <div><span class="text-pink-400">const</span> { color = <span class="text-green-400">'negro'</span> } = carro;</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Características:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Extrae propiedades por nombre</li>
+                        <li>Permite asignar alias a las propiedades</li>
+                        <li>Puede tener valores por defecto</li>
+                        <li>Funciona con objetos anidados</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destructuración de Arrays -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Destructuración de Arrays</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> numeros = [<span class="text-orange-400">1</span>, <span class="text-orange-400">2</span>, <span class="text-orange-400">3</span>, <span class="text-orange-400">4</span>, <span class="text-orange-400">5</span>];</div>
+                        <br>
+                        <div><span class="text-gray-500">// Destructuración básica</span></div>
+                        <div><span class="text-pink-400">const</span> [primero, segundo] = numeros;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Saltando elementos</span></div>
+                        <div><span class="text-pink-400">const</span> [, , tercero] = numeros;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Rest operator</span></div>
+                        <div><span class="text-pink-400">const</span> [inicio, ...resto] = numeros;</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Características:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Extrae elementos por posición</li>
+                        <li>Permite saltar elementos usando comas</li>
+                        <li>Usa rest operator (...) para el resto de elementos</li>
+                        <li>Puede tener valores por defecto</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operador Spread -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Operador Spread (...)</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-gray-500">// Copiar arrays</span></div>
+                        <div><span class="text-pink-400">const</span> original = [<span class="text-orange-400">1</span>, <span class="text-orange-400">2</span>, <span class="text-orange-400">3</span>];</div>
+                        <div><span class="text-pink-400">const</span> copia = [...original];</div>
+                        <br>
+                        <div><span class="text-gray-500">// Combinar arrays</span></div>
+                        <div><span class="text-pink-400">const</span> combinado = [...original, <span class="text-orange-400">4</span>, <span class="text-orange-400">5</span>];</div>
+                        <br>
+                        <div><span class="text-gray-500">// Copiar objetos</span></div>
+                        <div><span class="text-pink-400">const</span> persona = {</div>
+                        <div class="pl-4">nombre: <span class="text-green-400">'Ana'</span>,</div>
+                        <div class="pl-4">edad: <span class="text-orange-400">25</span></div>
+                        <div>};</div>
+                        <div><span class="text-pink-400">const</span> copiaPerson = { ...persona };</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Usos comunes:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Crear copias de arrays y objetos</li>
+                        <li>Combinar múltiples arrays</li>
+                        <li>Añadir elementos a un array</li>
+                        <li>Combinar objetos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos Prácticos Básicos -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Casos Prácticos Básicos</h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">Parámetros de Función</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-pink-400">function</span> <span class="text-purple-400">procesarUsuario</span>({ nombre, edad, ciudad = <span class="text-green-400">'Desconocida'</span> }) {</div>
+                            <div class="pl-4"><span class="text-pink-400">return</span> <span class="text-green-400">`${nombre}, ${edad} años, ${ciudad}`</span>;</div>
+                            <div>}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">Intercambio de Variables</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-pink-400">let</span> a = <span class="text-orange-400">5</span>, b = <span class="text-orange-400">10</span>;</div>
+                            <div>[a, b] = [b, a];</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos Prácticos Avanzados -->
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Casos Prácticos Avanzados</h2>
+
+            <!-- Caso 1: Manejo de APIs -->
+            <div class="p-4 bg-blue-50 rounded-lg mb-4">
+                <h3 class="font-semibold mb-2">1. Destructuración en APIs</h3>
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                    <div class="space-y-2">
+                        <div><span class="text-gray-500">// Respuesta de API</span></div>
+                        <div><span class="text-pink-400">const</span> response = {</div>
+                        <div class="pl-4">data: {</div>
+                        <div class="pl-8">user: {</div>
+                        <div class="pl-12">name: <span class="text-green-400">'Juan'</span>,</div>
+                        <div class="pl-12">profile: {</div>
+                        <div class="pl-16">age: <span class="text-orange-400">25</span>,</div>
+                        <div class="pl-16">city: <span class="text-green-400">'Madrid'</span></div>
+                        <div class="pl-12">}</div>
+                        <div class="pl-8">}</div>
+                        <div class="pl-4">}</div>
+                        <div>};</div>
+                        <br/>
+                        <div><span class="text-pink-400">const</span> {</div>
+                        <div class="pl-4">data: {</div>
+                        <div class="pl-8">user: { name, profile: { age, city } }</div>
+                        <div class="pl-4">}</div>
+                        <div>} = response;</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caso 2: Datos Tabulares -->
+            <div class="p-4 bg-green-50 rounded-lg mb-4">
+                <h3 class="font-semibold mb-2">2. Transformación de Datos</h3>
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> data = [</div>
+                        <div class="pl-4">[<span class="text-green-400">'nombre'</span>, <span class="text-green-400">'edad'</span>, <span class="text-green-400">'ciudad'</span>],</div>
+                        <div class="pl-4">[<span class="text-green-400">'Ana'</span>, <span class="text-orange-400">25</span>, <span class="text-green-400">'Madrid'</span>],</div>
+                        <div class="pl-4">[<span class="text-green-400">'Luis'</span>, <span class="text-orange-400">30</span>, <span class="text-green-400">'Barcelona'</span>]</div>
+                        <div>];</div>
+                        <br/>
+                        <div><span class="text-pink-400">const</span> [headers, ...rows] = data;</div>
+                        <div><span class="text-pink-400">const</span> usuarios = rows.map(([nombre, edad, ciudad]) => ({</div>
+                            <div class="pl-4">nombre,</div>
+                            <div class="pl-4">edad,</div>
+                            <div class="pl-4">ciudad</div>
+                            <div>}));</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Caso 3: Configuración Avanzada -->
+                <div class="p-4 bg-yellow-50 rounded-lg mb-4">
+                    <h3 class="font-semibold mb-2">3. Configuración de Componentes</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-pink-400">function</span> <span class="text-purple-400">createButton</span>({</div>
+                            <div class="pl-4">text = <span class="text-green-400">'Click'</span>,</div>
+                            <div class="pl-4">style = {},</div>
+                            <div class="pl-4">onClick = () => {},</div>
+                            <div class="pl-4">disabled = <span class="text-orange-400">false</span>,</div>
+                            <div class="pl-4">...otherProps</div>
+                            <div>} = {}) {</div>
+                            <div class="pl-4"><span class="text-pink-400">return</span> {</div>
+                            <div class="pl-8">text,</div>
+                            <div class="pl-8">style,</div>
+                            <div class="pl-8">onClick,</div>
+                            <div class="pl-8">disabled,</div>
+                            <div class="pl-8">...otherProps</div>
+                            <div class="pl-4">};</div>
+                            <div>}</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Caso 4: Manipulación Avanzada -->
+                <div class="p-4 bg-purple-50 rounded-lg mb-4">
+                    <h3 class="font-semibold mb-2">4. Manipulación de Arrays y Objetos</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-gray-500">// Combinando arrays y objetos</span></div>
+                            <div><span class="text-pink-400">const</span> config = {</div>
+                            <div class="pl-4">opciones: [<span class="text-green-400">'a'</span>, <span class="text-green-400">'b'</span>],</div>
+                            <div class="pl-4">valores: { x: <span class="text-orange-400">1</span>, y: <span class="text-orange-400">2</span> }</div>
+                            <div>};</div>
+                            <br/>
+                            <div><span class="text-pink-400">const</span> {</div>
+                            <div class="pl-4">opciones: [primerOpcion, segundaOpcion],</div>
+                            <div class="pl-4">valores: { x, y }</div>
+                            <div>} = config;</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Caso 5: Funciones Avanzadas -->
+                <div class="p-4 bg-red-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">5. Funciones con Destructuración Múltiple</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-pink-400">function</span> <span class="text-purple-400">procesarDatos</span>([primer, segundo, ...resto] = [], { orden = <span class="text-green-400">'asc'</span>, filtro = null } = {}) {</div>
+                            <div class="pl-4"><span class="text-gray-500">// Procesar array</span></div>
+                            <div class="pl-4"><span class="text-pink-400">const</span> datos = orden === <span class="text-green-400">'asc'</span> </div>
+                            <div class="pl-8">? [primer, segundo, ...resto]</div>
+                            <div class="pl-8">: [...resto, segundo, primer];</div>
+                            <br/>
+                            <div class="pl-4"><span class="text-gray-500">// Aplicar filtro si existe</span></div>
+                            <div class="pl-4"><span class="text-pink-400">return</span> filtro ? datos.filter(filtro) : datos;</div>
+                            <div>}</div>
+                            <br/>
+                            <div><span class="text-gray-500">// Ejemplo de uso</span></div>
+                            <div><span class="text-pink-400">const</span> resultado = procesarDatos([<span class="text-orange-400">1</span>, <span class="text-orange-400">2</span>, <span class="text-orange-400">3</span>, <span class="text-orange-400">4</span>], { </div>
+                            <div class="pl-4">orden: <span class="text-green-400">'desc'</span>,</div>
+                            <div class="pl-4">filtro: x => x > <span class="text-orange-400">2</span></div>
+                            <div>});</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Tips y Buenas Prácticas -->
+            <section class="bg-white rounded-lg shadow-md p-6 mt-8">
+                <h2 class="text-2xl font-bold mb-4 text-blue-600">Tips y Buenas Prácticas</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Usa valores por defecto para evitar errores cuando faltan propiedades</li>
+                            <li>Combina destructuración con el operador spread para mayor flexibilidad</li>
+                            <li>En funciones, usa la destructuración de parámetros para código más limpio</li>
+                            <li>Aprovecha los alias cuando necesites evitar conflictos de nombres</li>
+                            <li>Utiliza la destructuración anidada con moderación para mantener la legibilidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 mt-8">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <p>Desarrollado para aprender JavaScript Moderno</p>
+            </div>
+        </footer>
+    </body>
+    </html>

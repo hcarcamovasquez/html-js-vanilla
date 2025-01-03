@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables en JavaScript Moderno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navegación -->
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white hover:text-gray-200 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Volver al Índice
+            </a>
+            <h1 class="text-xl font-bold">Variables en JavaScript</h1>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8">
+        <!-- Introducción -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Introducción a las Variables</h2>
+            <p class="text-gray-700 mb-4">
+                En JavaScript moderno, tenemos tres formas de declarar variables: var, let y const. 
+                Cada una tiene sus propias características y casos de uso específicos.
+            </p>
+        </section>
+
+        <!-- var -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">var</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Características:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Tiene alcance de función o global</li>
+                        <li>Puede ser redeclarada</li>
+                        <li>Puede ser reasignada</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">var</span> nombre = <span class="text-green-400">'Juan'</span>;</div>
+                        <div><span class="text-pink-400">var</span> nombre = <span class="text-green-400">'Pedro'</span>;  <span class="text-gray-500">// Permitido</span></div>
+                        <div>nombre = <span class="text-green-400">'María'</span>;      <span class="text-gray-500">// Permitido</span></div>
+                        <br>
+                        <div><span class="text-purple-400">function</span> ejemploVar() {</div>
+                        <div class="pl-4"><span class="text-pink-400">var</span> x = <span class="text-orange-400">1</span>;</div>
+                        <div class="pl-4"><span class="text-pink-400">if</span> (<span class="text-orange-400">true</span>) {</div>
+                        <div class="pl-8"><span class="text-pink-400">var</span> x = <span class="text-orange-400">2</span>;</div>
+                        <div class="pl-8">console.log(x); <span class="text-gray-500">// 2</span></div>
+                        <div class="pl-4">}</div>
+                        <div class="pl-4">console.log(x); <span class="text-gray-500">// 2</span></div>
+                        <div>}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- let -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">let</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Características:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Tiene alcance de bloque</li>
+                        <li>No puede ser redeclarada en el mismo ámbito</li>
+                        <li>Puede ser reasignada</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">let</span> edad = <span class="text-orange-400">25</span>;</div>
+                        <div><span class="text-gray-500">// let edad = 26;  // Error!</span></div>
+                        <div>edad = <span class="text-orange-400">26</span>;        <span class="text-gray-500">// Permitido</span></div>
+                        <br>
+                        <div><span class="text-purple-400">function</span> ejemploLet() {</div>
+                        <div class="pl-4"><span class="text-pink-400">let</span> x = <span class="text-orange-400">1</span>;</div>
+                        <div class="pl-4"><span class="text-pink-400">if</span> (<span class="text-orange-400">true</span>) {</div>
+                        <div class="pl-8"><span class="text-pink-400">let</span> x = <span class="text-orange-400">2</span>; <span class="text-gray-500">// Variable diferente</span></div>
+                        <div class="pl-8">console.log(x); <span class="text-gray-500">// 2</span></div>
+                        <div class="pl-4">}</div>
+                        <div class="pl-4">console.log(x); <span class="text-gray-500">// 1</span></div>
+                        <div>}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- const -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">const</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Características:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Tiene alcance de bloque</li>
+                        <li>No puede ser redeclarada</li>
+                        <li>No puede ser reasignada</li>
+                        <li> Los objetos y arrays pueden ser modificados <strong>[IMPORTANTE]</strong></li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> PI = <span class="text-orange-400">3.14159</span>;</div>
+                        <div><span class="text-gray-500">// PI = 3.14;  // Error!</span></div>
+                        <br>
+                        <div><span class="text-pink-400">const</span> persona = {</div>
+                        <div class="pl-4">nombre: <span class="text-green-400">'Ana'</span></div>
+                        <div>};</div>
+                        <div>persona.nombre = <span class="text-green-400">'María'</span>;  <span class="text-gray-500">// Permitido</span></div>
+                        <div><span class="text-gray-500">// persona = {};  // Error!</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mejores Prácticas -->
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Mejores Prácticas</h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">✅ Recomendado:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Usar <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">const</span> por defecto</li>
+                        <li>Usar <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">let</span> cuando necesites reasignar valores</li>
+                        <li>Evitar <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">var</span> en código moderno</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-red-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">❌ Evitar:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Usar <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">var</span> para nuevos proyectos</li>
+                        <li>Reasignar variables innecesariamente</li>
+                        <li>Declarar variables sin inicializarlas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>Desarrollado para aprender JavaScript Moderno</p>
+        </div>
+    </footer>
+</body>
+</html>

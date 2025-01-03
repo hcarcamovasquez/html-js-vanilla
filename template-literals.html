@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals en JavaScript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navegación -->
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white hover:text-gray-200 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Volver al Índice
+            </a>
+            <h1 class="text-xl font-bold">Template Literals</h1>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto p-6">
+        <!-- Introducción -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Template Literals</h2>
+            <p class="text-gray-700 mb-4">
+                Los template literals son cadenas de texto que permiten expresiones incrustadas y 
+                pueden abarcar múltiples líneas. Se definen usando backticks (`) en lugar de 
+                comillas simples o dobles.
+            </p>
+        </section>
+
+        <!-- Sintaxis Básica -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Sintaxis Básica</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> nombre = <span class="text-green-400">'Humberto'</span>;</div>
+                        <div><span class="text-pink-400">const</span> edad = <span class="text-orange-400">33</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Concatenación tradicional</span></div>
+                        <div><span class="text-pink-400">const</span> mensaje1 = <span class="text-green-400">'Hola, soy '</span> + nombre + <span class="text-green-400">' y tengo '</span> + edad + <span class="text-green-400">' años'</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Template literal</span></div>
+                        <div><span class="text-pink-400">const</span> mensaje2 = <span class="text-green-400">`Hola, soy ${nombre} y tengo ${edad} años`</span>;</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Ventajas:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Sintaxis más limpia y legible</li>
+                        <li>Interpolación de variables con ${}</li>
+                        <li>Soporte para múltiples líneas</li>
+                        <li>Puede incluir expresiones</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Múltiples Líneas -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Múltiples Líneas</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> html = <span class="text-green-400">`
+    <div class="usuario">
+        <h2>${nombre}</h2>
+        <p>Edad: ${edad}</p>
+    </div>
+`</span>;</div>
+                        <br>
+                        <div><span class="text-pink-400">const</span> mensaje = <span class="text-green-400">`
+    Primera línea
+    Segunda línea
+    Tercera línea
+`</span>;</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Características:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Mantiene el formato y los saltos de línea</li>
+                        <li>Ideal para crear HTML</li>
+                        <li>No necesita caracteres de escape</li>
+                        <li>Respeta la indentación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expresiones y Cálculos -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Expresiones y Cálculos</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> a = <span class="text-orange-400">5</span>;</div>
+                        <div><span class="text-pink-400">const</span> b = <span class="text-orange-400">10</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Cálculos</span></div>
+                        <div><span class="text-pink-400">const</span> suma = <span class="text-green-400">`${a} + ${b} = ${a + b}`</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Operador ternario</span></div>
+                        <div><span class="text-pink-400">const</span> estado = <span class="text-green-400">`${a > b ? 'Mayor' : 'Menor'}`</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Llamadas a funciones</span></div>
+                        <div><span class="text-pink-400">const</span> mayusculas = <span class="text-green-400">`${nombre.toUpperCase()}`</span>;</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Posibilidades:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Operaciones matemáticas</li>
+                        <li>Operadores ternarios</li>
+                        <li>Llamadas a métodos</li>
+                        <li>Cualquier expresión JavaScript válida</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Uso -->
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Casos de Uso Comunes</h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">Templates HTML</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-pink-400">const</span> crearCard = (usuario) => <span class="text-green-400">`
+    <div class="card">
+        <h3>${usuario.nombre}</h3>
+        <p>${usuario.descripcion}</p>
+    </div>
+`</span>;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">Mensajes Dinámicos</h3>
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm mt-2">
+                        <div class="space-y-2">
+                            <div><span class="text-pink-400">const</span> mensaje = (tipo, contenido) => <span class="text-green-400">`
+    [${tipo.toUpperCase()}]: ${contenido}
+    Fecha: ${new Date().toLocaleString()}
+`</span>;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>Desarrollado para aprender JavaScript Moderno</p>
+        </div>
+    </footer>
+</body>
+</html>

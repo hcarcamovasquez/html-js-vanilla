@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript Moderno</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script>
+      tailwind.config = {
+    
+        theme: {
+          extend: {},
+        },
+      }
+    </script>
+    
+ 
+    </head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-blue-600 text-white py-12">
+            <div class="max-w-4xl mx-auto px-4">
+                <h1 class="text-4xl font-bold mb-4">Curso JavaScript Moderno</h1>
+                <p class="text-xl">Aprende los conceptos fundamentales de JavaScript </p>
+            </div>
+        </header>
+
+
+
+        <!-- Main Content -->
+        <main class="flex-grow max-w-4xl mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Variables -->
+                <a href="./variables.html" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+                    <div class="text-blue-600 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Variables</h2>
+                    <p class="text-gray-900">var, let y const - Aprende sobre el alcance y uso de variables</p>
+                </a>
+
+                <!-- Funciones Flecha -->
+                <a href="arrow-functions.html" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+                    <div class="text-blue-600 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Funciones Flecha</h2>
+                    <p class="text-gray-600">Arrow Functions y sus diferencias con funciones tradicionales</p>
+                </a>
+
+                <!-- Destructuración -->
+                <a href="destructuring.html" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+                    <div class="text-blue-600 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Destructuración</h2>
+                    <p class="text-gray-600">Destructuring y Spread Operator en objetos y arrays</p>
+                </a>
+
+                <!-- Template Literals -->
+                <a href="template-literals.html" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+                    <div class="text-blue-600 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Template Literals</h2>
+                    <p class="text-gray-600">Plantillas de texto y expresiones embebidas</p>
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 mt-12">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <p>Desarrollado para aprender JavaScript Moderno</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

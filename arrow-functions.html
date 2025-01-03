@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Flecha en JavaScript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navegación -->
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white hover:text-gray-200 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Volver al Índice
+            </a>
+            <h1 class="text-xl font-bold">Funciones Flecha</h1>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-8">
+        <!-- Introducción -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Funciones Flecha (Arrow Functions)</h2>
+            <p class="text-gray-700 mb-4">
+                Las funciones flecha son una forma más concisa de escribir funciones en JavaScript, introducidas en ES6.
+                Proporcionan una sintaxis más corta y mantienen el contexto del this.
+            </p>
+        </section>
+
+        <!-- Sintaxis Básica -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Sintaxis Básica</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Comparación:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Más cortas que las funciones tradicionales</li>
+                        <li>No necesitan la palabra clave function</li>
+                        <li>Return implícito en funciones de una línea</li>
+                        <li>Paréntesis opcionales con un solo parámetro</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-gray-500">// Función tradicional</span></div>
+                        <div><span class="text-purple-400">function</span> suma(a, b) {</div>
+                        <div class="pl-4"><span class="text-pink-400">return</span> a + b;</div>
+                        <div>}</div>
+                        <br>
+                        <div><span class="text-gray-500">// Función flecha</span></div>
+                        <div><span class="text-pink-400">const</span> suma = (a, b) => a + b;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variaciones de Sintaxis -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Variaciones de Sintaxis</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-gray-500">// Sin parámetros</span></div>
+                        <div><span class="text-pink-400">const</span> saludar = () => <span class="text-green-400">'Hola'</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Un parámetro</span></div>
+                        <div><span class="text-pink-400">const</span> doble = x => x * <span class="text-orange-400">2</span>;</div>
+                        <br>
+                        <div><span class="text-gray-500">// Múltiples líneas</span></div>
+                        <div><span class="text-pink-400">const</span> calcular = (x, y) => {</div>
+                        <div class="pl-4"><span class="text-pink-400">const</span> suma = x + y;</div>
+                        <div class="pl-4"><span class="text-pink-400">return</span> suma * <span class="text-orange-400">2</span>;</div>
+                        <div>};</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Casos de uso:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Sin parámetros: Usar paréntesis vacíos ()</li>
+                        <li>Un parámetro: Paréntesis opcionales</li>
+                        <li>Múltiples parámetros: Requieren paréntesis</li>
+                        <li>Múltiples líneas: Requieren llaves y return explícito</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uso con Arrays -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Uso con Arrays</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-pink-400">const</span> numeros = [<span class="text-orange-400">1, 2, 3, 4, 5</span>];</div>
+                        <br>
+                        <div><span class="text-gray-500">// Map</span></div>
+                        <div><span class="text-pink-400">const</span> duplicados = numeros.map(num => num * <span class="text-orange-400">2</span>);</div>
+                        <br>
+                        <div><span class="text-gray-500">// Filter</span></div>
+                        <div><span class="text-pink-400">const</span> pares = numeros.filter(num => num % <span class="text-orange-400">2</span> === <span class="text-orange-400">0</span>);</div>
+                        <br>
+                        <div><span class="text-gray-500">// Reduce</span></div>
+                        <div><span class="text-pink-400">const</span> suma = numeros.reduce((acc, num) => acc + num, <span class="text-orange-400">0</span>);</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Métodos de Array Comunes:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>map(): Transforma cada elemento</li>
+                        <li>filter(): Filtra elementos según una condición</li>
+                        <li>reduce(): Reduce el array a un único valor</li>
+                        <li>forEach(): Ejecuta una función para cada elemento</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Sección: El this en Funciones Flecha -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">El this en Funciones Flecha</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-gray-500">// Problema con función tradicional</span></div>
+                        <div><span class="text-pink-400">const</span> usuario = {</div>
+                        <div class="pl-4">nombre: <span class="text-green-400">"Ana"</span>,</div>
+                        <div class="pl-4">tareas: [<span class="text-green-400">"Código"</span>, <span class="text-green-400">"Testing"</span>],</div>
+                        <div class="pl-4">mostrarTareas: <span class="text-purple-400">function</span>() {</div>
+                        <div class="pl-8">this.tareas.forEach(<span class="text-purple-400">function</span>(tarea) {</div>
+                        <div class="pl-12">console.log(this.nombre, tarea);</div>
+                        <div class="pl-12"><span class="text-gray-500">// ❌ this.nombre es undefined</span></div>
+                        <div class="pl-8">});</div>
+                        <div class="pl-4">}</div>
+                        <div>};</div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto">
+                    <div class="space-y-2">
+                        <div><span class="text-gray-500">// Solución con función flecha</span></div>
+                        <div><span class="text-pink-400">const</span> usuario = {</div>
+                        <div class="pl-4">nombre: <span class="text-green-400">"Ana"</span>,</div>
+                        <div class="pl-4">tareas: [<span class="text-green-400">"Código"</span>, <span class="text-green-400">"Testing"</span>],</div>
+                        <div class="pl-4">mostrarTareas: <span class="text-purple-400">function</span>() {</div>
+                        <div class="pl-8">this.tareas.forEach(tarea => {</div>
+                        <div class="pl-12">console.log(this.nombre, tarea);</div>
+                        <div class="pl-12"><span class="text-gray-500">// ✅ Funciona: Ana Código</span></div>
+                        <div class="pl-8">});</div>
+                        <div class="pl-4">}</div>
+                        <div>};</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-blue-50 rounded-lg mb-4">
+                <h3 class="font-semibold mb-2">🎯 Comportamiento del this</h3>
+                <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                    <li>Las funciones flecha heredan el this del contexto donde fueron creadas</li>
+                    <li>No crean su propio contexto como las funciones tradicionales</li>
+                    <li>Resuelven el problema común de perder el this en callbacks</li>
+                    <li>Especialmente útiles en callbacks de arrays y eventos</li>
+                </ul>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 bg-green-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">✅ Casos ideales de uso</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Como callbacks en métodos de arrays</li>
+                        <li>En event listeners</li>
+                        <li>En setTimeout/setInterval</li>
+                        <li>Cuando necesitas preservar el this del contexto padre</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-yellow-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">⚠️ No usar como</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Métodos de objetos (perderías el this del objeto)</li>
+                        <li>Constructores (no tienen prototype)</li>
+                        <li>Cuando necesitas el objeto arguments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consideraciones Importantes -->
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Consideraciones Importantes</h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-yellow-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">⚠️ Ten en cuenta:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>No se pueden usar como constructores</li>
+                        <li>No tienen el objeto <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">arguments</span></li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="font-semibold mb-2">✅ Casos ideales de uso:</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>Callbacks cortos</li>
+                        <li>Métodos de array (map, filter, reduce)</li>
+                        <li>Funciones simples de una línea</li>
+                        <li>Cuando necesitas mantener el this del contexto padre</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>Desarrollado para aprender JavaScript Moderno</p>
+        </div>
+    </footer>
+</body>
+</html>
